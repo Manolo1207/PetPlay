@@ -1,0 +1,80 @@
+{
+  "projectName": "PetPlay MVP",
+  "description": "Aplicación móvil para conectar dueños de perros",
+  "version": "1.0.0",
+  "stack": {
+    "frontend": "React Native 0.73.0",
+    "runtime": "Expo 50.0.0",
+    "language": "TypeScript 5.3.0",
+    "backend": "Firebase (Auth + Firestore)",
+    "navigation": "React Navigation 6.x",
+    "styling": "StyleSheet"
+  },
+  "structure": {
+    "src": {
+      "components": "5 componentes reutilizables (Button, Input, Cards, Container)",
+      "screens": "8 pantallas (Auth, Home, Community, Profile, Settings, DogProfile)",
+      "services": "Firebase Auth, Firestore, Notifications (placeholder)",
+      "hooks": "Custom hooks (useAuth, useDogs, useNotifications)",
+      "types": "TypeScript interfaces (Models, Navigation)",
+      "utils": "Constantes y helpers",
+      "navigation": "Stack navigator y Tab navigator",
+      "assets": "Carpeta para imágenes (preparada)"
+    }
+  },
+  "features": {
+    "auth": {
+      "status": "✅ Implementado",
+      "description": "Registro, Login, Logout con Firebase Auth"
+    },
+    "userProfile": {
+      "status": "✅ Implementado",
+      "description": "Perfil de usuario con zona, nombre, email"
+    },
+    "dogProfile": {
+      "status": "✅ Implementado",
+      "description": "CRUD completo de perros (crear, editar, eliminar)"
+    },
+    "matching": {
+      "status": "✅ Implementado",
+      "description": "Descubrir perros cercanos, hacer matches"
+    },
+    "community": {
+      "status": "✅ Implementado",
+      "description": "Feed de alertas de perros perdidos"
+    },
+    "notifications": {
+      "status": "🔄 Placeholder",
+      "description": "Estructura lista para v2 (Firebase Cloud Messaging)"
+    }
+  },
+  "firebaseCollections": {
+    "users": "Perfil de usuarios",
+    "dogs": "Perfil de perros",
+    "matches": "Invitaciones de juego",
+    "lost_dogs": "Alertas de perros perdidos"
+  },
+  "quickStart": {
+    "1": "npm install",
+    "2": "Actualizar Firebase config en src/services/firebase.ts",
+    "3": "npx expo start",
+    "4": "Presionar 'a' (Android) o 'i' (iOS) o 'w' (web)"
+  },
+  "documentation": {
+    "README.md": "Información general y setup",
+    "SETUP.md": "Guía paso a paso de instalación",
+    "DEVELOPMENT.md": "Arquitectura y guía para desarrolladores"
+  },
+  "fileCount": {
+    "components": 5,
+    "screens": 8,
+    "services": 4,
+    "hooks": 3,
+    "typeFiles": 2,
+    "navigationFiles": 2,
+    "utilFiles": 3,
+    "configFiles": 5,
+    "documentationFiles": 3,
+    "total": "~40 archivos"
+  }
+}

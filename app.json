@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "petplay",
+    "slug": "petplay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.petplay.app"
+    },
+    "android": {
+      "package": "com.petplay.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "145b1199-7d87-4d14-b089-c7f94e844fd2"
+      }
+    },
+    "plugins": [
+      "expo-facebook"
+    ]
+  }
+}
