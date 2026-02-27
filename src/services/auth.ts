@@ -88,14 +88,6 @@ const uploadProfilePhoto = async (uid: string, uri: string): Promise<string> => 
 };
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 
-// Try to load example data for development mocks
-let DEV_DATA: any = null;
-try {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  DEV_DATA = require('../../FIREBASE_EXAMPLE_DATA.js');
-} catch (e) {
-  DEV_DATA = null;
-}
 
 // Función para registrar un nuevo usuario con email y contraseña
 const registerUser = async (email: string, password: string) => {
@@ -130,18 +122,6 @@ const observeAuth = (callback: (user: User | null) => void) => {
 
 const getUserData = async (uid: string) => {
   try {
-    if (__DEV__ && DEV_DATA) {
-      // support the simulated dev user id by mapping to a sample user
-      if (uid === 'dev') {
-        const firstKey = Object.keys(DEV_DATA.users || {})[0];
-        return DEV_DATA.users[firstKey] || null;
-      }
-      // if uid matches a sample user id return it
-      if (DEV_DATA.users && DEV_DATA.users[uid]) {
-        return DEV_DATA.users[uid];
-      }
-    }
-
     const docRef = doc(db, 'users', uid);
     const snap = await getDoc(docRef);
     return snap.exists() ? (snap.data() as any) : null;

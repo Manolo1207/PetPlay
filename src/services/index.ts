@@ -14,7 +14,7 @@ import {
 import { db } from './firebase';
 import { Dog, Match, LostDogAlert, Chat, Message } from '../types/models';
 
-// Use local example data for a fast dev MVP when running in development.
+// ...existing code...
 
 export const dogService = {
   async createDog(dog: Omit<Dog, 'id' | 'createdAt'>): Promise<string> {
@@ -63,7 +63,7 @@ export const dogService = {
     await deleteDoc(doc(db, 'dogs', dogId));
   },
 };
-// Removed references to MOCK_DATA and __DEV__
+// ...existing code...
 
 
 // Chat service for handling chat and message creation/retrieval

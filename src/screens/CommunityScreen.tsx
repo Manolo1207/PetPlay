@@ -13,14 +13,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'MainTabs'>;
 
 
 export const CommunityScreen: React.FC<Props> = ({ navigation }) => {
-  // Log para depuración de navigation
-  React.useEffect(() => {
-    // Solo en desarrollo
-    if (typeof window !== 'undefined') {
-      // @ts-ignore
-      console.log('navigation:', navigation);
-    }
-  }, [navigation]);
+  // ...existing code...
   const { user } = useAuth();
   const [likedDogIds, setLikedDogIds] = useState<string[]>([]);
   const [zone, setZone] = useState<string>('');
@@ -66,7 +59,7 @@ export const CommunityScreen: React.FC<Props> = ({ navigation }) => {
       // Obtener nombre del otro usuario (puedes mejorarlo si tienes más datos)
       const userService = require('../services/auth').authService;
       const otherUser = await userService.getUserData(dog.ownerId);
-      console.log('Navegando a Chat:', { chatId, otherUserName: otherUser?.name || 'Usuario' });
+      // ...existing code...
       navigation.navigate('Chat', { chatId, otherUserName: otherUser?.name || 'Usuario' });
     } catch (e) {
       console.error('Error al abrir chat:', e);

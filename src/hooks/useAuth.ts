@@ -10,11 +10,7 @@ export const useAuth = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (__DEV__) {
-      setUser({ uid: 'dev', displayName: 'Developer' } as any as FirebaseUser);
-      setLoading(false);
-      return;
-    }
+    // ...existing code...
     const unsubscribe = auth.onAuthStateChanged(
       async (currentUser) => {
         setUser(currentUser);

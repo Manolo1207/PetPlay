@@ -87,16 +87,7 @@ const DogProfileScreen: React.FC<Props> = ({ navigation, route }) => {
     try {
       setLoading(true);
 
-      // Normaliza ownerId para mocks
       let ownerId = user.uid;
-      if (__DEV__) {
-        try {
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
-          const MOCK_DATA = require('../../FIREBASE_EXAMPLE_DATA.js');
-          const firstUserId = Object.keys(MOCK_DATA.users || {})[0];
-          if (ownerId === 'dev') ownerId = firstUserId;
-        } catch { }
-      }
       let finalPhotoUrl = photoUrl;
       if (photoUrl && (photoUrl.startsWith('file://') || photoUrl.startsWith('content://'))) {
         setPhotoUploading(true);

@@ -31,11 +31,7 @@ const RootNavigator = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [showOnboarding, setShowOnboarding] = React.useState(false);
 
-  // DEV: simulate a logged-in user so we can explore MainTabs without Firebase.
-  // This is intentionally only active during development and is safe to revert.
-  const [user, setUser] = React.useState<User | null>(
-    __DEV__ ? ({ uid: 'dev', displayName: 'Developer' } as any) : null
-  );
+  const [user, setUser] = React.useState<User | null>(null);
 
   React.useEffect(() => {
     (async () => {
@@ -43,10 +39,7 @@ const RootNavigator = () => {
       const seen = await hasSeenOnboarding();
       setShowOnboarding(!seen);
 
-      if (__DEV__) {
-        setIsLoading(false);
-        return;
-      }
+      // ...existing code...
 
       const unsubscribe = authService.observe((authUser: User | null) => {
         setUser(authUser);

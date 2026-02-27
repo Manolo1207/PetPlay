@@ -2,16 +2,12 @@ import { useEffect } from 'react';
 
 export const useNotifications = () => {
   useEffect(() => {
-    // TODO: Implementar en v2
-    // Aquí irá la lógica de push notifications
-    // usando expo-notifications o Firebase Cloud Messaging
-    console.log('Notifications module ready for v2');
+    // Aquí irá la lógica de push notifications en producción
   }, []);
 
   const requestNotificationPermission = async () => {
     try {
-      // TODO: Implementar solicitud de permisos
-      console.log('Permission request will be implemented in v2');
+      // Aquí se implementará la solicitud de permisos en producción
       return true;
     } catch (error) {
       console.error('Error requesting notification permission:', error);
@@ -21,8 +17,7 @@ export const useNotifications = () => {
 
   const sendLocalNotification = async (title: string, body: string) => {
     try {
-      // TODO: Implementar notificaciones locales
-      console.log(`Notification: ${title} - ${body}`);
+      // Aquí se implementará la notificación local en producción
     } catch (error) {
       console.error('Error sending notification:', error);
     }
