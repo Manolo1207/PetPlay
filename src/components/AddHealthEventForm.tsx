@@ -62,7 +62,6 @@ export const AddHealthEventForm: React.FC<Props> = ({ dogId, onEventAdded }) => 
                 <Button title="Desparasitación" onPress={() => setType('desparasitación')} color={type === 'desparasitación' ? '#4caf50' : '#bbb'} />
                 <Button title="Otro" onPress={() => setType('otro')} color={type === 'otro' ? '#4caf50' : '#bbb'} />
             </View>
-            {error ? <Text style={styles.error}>{error}</Text> : null}
             <Button title={loading ? 'Guardando...' : 'Agregar Evento'} onPress={handleAdd} disabled={loading} />
         </View>
     );
